@@ -19,7 +19,7 @@ app.param('collectionName', function(req, res, next, collectionName){
 // })
 
 
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, '/public/app')));
 
 app.get('/api/:collectionName', function(req, res, next) {
   req.collection.find({} ,{limit:10, sort: [['_id',-1]]}).toArray(function(e, results){
